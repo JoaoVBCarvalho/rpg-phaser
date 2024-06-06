@@ -8,22 +8,22 @@ export const createPlayer = (scene: Phaser.Scene) => {
   return player;
 };
 
-export const loadSprites = (scene: Phaser.Scene): void => {
+export const loadPlayerSprites = (scene: Phaser.Scene): void => {
   scene.load.spritesheet("player_idle", "./assets/player/idle.png", {
     frameWidth: 83,
-    frameHeight: 64,
+    frameHeight: 127,
     spacing: 45,
   });
 
   scene.load.spritesheet("player_walk", "./assets/player/walk.png", {
     frameWidth: 83,
-    frameHeight: 64,
+    frameHeight: 127,
     spacing: 45,
   });
 
   scene.load.spritesheet("player_attack", "./assets/player/attack.png", {
     frameWidth: 83,
-    frameHeight: 64,
+    frameHeight: 127,
     spacing: 45,
   });
 };
@@ -33,9 +33,9 @@ export const createAnimations = (scene: Phaser.Scene, player: Player): void => {
     key: "player_idle",
     frames: scene.anims.generateFrameNames("player_idle", {
       start: 0,
-      end: 7,
+      end: 5,
     }),
-    frameRate: 8,
+    frameRate: 4,
     repeat: -1,
     yoyo: true,
   });
@@ -56,7 +56,7 @@ export const createAnimations = (scene: Phaser.Scene, player: Player): void => {
       start: 0,
       end: 3,
     }),
-    frameRate: 12,
+    frameRate: 9,
     repeat: 0,
   });
 

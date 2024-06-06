@@ -1,3 +1,4 @@
+import { createEffect } from "./effect";
 import { Player } from "./player";
 
 export const createControls = (
@@ -36,13 +37,14 @@ export const configControls = (
 
   if (controls.space.isDown) {
     if (!player.isAttacking) {
-      attack(player);
+      attack(player, scene);
     }
     return;
   }
 
   if (!player.isAttacking) {
     player.anims.play("player_idle", true);
+    return
   }
 };
 
@@ -69,7 +71,8 @@ const moveDown = (player): void => {
   player.setVelocityY(defaultVelocity);
 };
 
-const attack = (player: Player): void => {
+const attack = (player: Player, scene): void => {
   player.isAttacking = true;
   player.anims.play("player_attack", true);
+  createEffect(player, scene);
 };
