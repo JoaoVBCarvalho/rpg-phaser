@@ -1,4 +1,5 @@
 export interface Player extends Phaser.Physics.Arcade.Sprite {
+  [x: string]: any;
   isAttacking?: boolean;
 }
 

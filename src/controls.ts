@@ -44,7 +44,7 @@ export const configControls = (
 
   if (!player.isAttacking) {
     player.anims.play("player_idle", true);
-    return
+    return;
   }
 };
 
